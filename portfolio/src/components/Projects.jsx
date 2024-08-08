@@ -5,33 +5,33 @@ const Projects = () => {
     {
       title: 'Personal Portfolio',
       description: 'A sleek and responsive portfolio website built using React and Tailwind CSS. It showcases my skills, projects, and contact information.',
-      link: '#', // Replace '#' with the actual URL of your project
+      link: 'https://github.com/prudorexa/portfolio.git', 
     },
     {
       title: 'Law Firm App',
       description: 'A comprehensive case management application for law firms, built with Django and React, featuring user roles, case tracking, and document management.',
-      link: 'https://github.com/prudorexa/law_track_frontend.git', // Replace '#' with the actual URL of your project
+      link: 'https://github.com/prudorexa/law_track_frontend.git', 
     },
     {
       title: 'Expense Tracker App',
       description: 'An app that allows users to track their expenses and manage budgets, built with React and Firebase for real-time updates.',
-      link: 'https://github.com/prudorexa/soft_exp.git', // Replace '#' with the actual URL of your project
+      link: 'https://github.com/prudorexa/soft_exp.git', 
     },
     {
       title: 'Fitness Tracker App',
       description: 'A fitness tracking app that monitors workouts and health metrics, using React Native and integrated with wearable devices.',
-      link: 'https://github.com/prudorexa/fitin_top.git', // Replace '#' with the actual URL of your project
+      link: 'https://github.com/prudorexa/fitin_top.git', 
     },
 
     {
       title: 'Spotify Music App',
       description: 'A music streaming app integrated with the Spotify API, built with React and Node.js, featuring playlist creation and song recommendations.',
-      link: 'https://github.com/prudorexa/sick_beats.git', // Replace '#' with the actual URL of your project
+      link: 'https://github.com/prudorexa/sick_beats.git', 
     },
     {
         title: 'ui ux design',
         description: 'A ui ux design project that showcases my skills in creating visually appealing and user-friendly.',
-        link: 'https://www.figma.com/design/zbTXepjQhTPju1ucbvTyo3/SOFT_EXP?node-id=0-1&m=dev',
+        link: 'https://github.com/prudorexa/uiux.git',
     }
 
   ];
