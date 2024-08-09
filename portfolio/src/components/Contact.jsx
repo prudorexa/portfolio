@@ -16,7 +16,7 @@ const Contact = () => {
     <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-300">
       <div className="lg:w-1/2 flex justify-center lg:justify-end mb-6 lg:mb-0">
         <img
-          src="src/assets/portfolio.jpg"
+          src="/public/images/portfolio.jpg"
           alt="Prudence Mathu"
           className="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-luminousGreen"
         />
