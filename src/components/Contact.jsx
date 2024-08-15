@@ -1,22 +1,45 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Message sent by ${formData.name}`);
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,   // Service ID from .env
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,  // Template ID from .env
+      formData,
+      import.meta.env.VITE_EMAILJS_USER_ID       // User ID from .env
+    )
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
+    })
+    .catch((err) => {
+      console.error('FAILED...', err);
+      alert('Failed to send the message, please try again.');
+    });
   };
 
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen p-4 bg-gradient-to-r from-gray-900 via-gray-800 to-black text-gray-300">
       <div className="lg:w-1/2 flex justify-center lg:justify-end mb-6 lg:mb-0">
         <img
-          src="/images/portfolio.jpg"
+          src="public\portfolio.jpg"
           alt="Prudence Mathu"
           className="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-luminousGreen"
         />
@@ -67,6 +90,6 @@ const Contact = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Contact;
