@@ -21,7 +21,7 @@ const Home = () => {
         </div>
         <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
           <img
-            src="public\portfolio.jpg"
+            src="public/portfolio.jpg"
             alt="Prudence Mathu"
             className="rounded-full shadow-lg w-64 h-64 object-cover border-4 border-luminousGreen"
           />
