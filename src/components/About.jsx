@@ -1,31 +1,57 @@
 import React from 'react';
+import { FaGraduationCap, FaMapMarkerAlt, FaCode, FaCertificate } from 'react-icons/fa';
+
+const facts = [
+  { icon: FaGraduationCap, label: 'Studying', value: 'DIT, KCA University', color: '#F0B429' },
+  { icon: FaCertificate, label: 'Certified', value: 'Software Engineering, Zindua (2024)', color: '#4FD1C5' },
+  { icon: FaCode, label: 'Focus', value: 'React, Django, Python', color: '#7C9CFF' },
+  { icon: FaMapMarkerAlt, label: 'Based in', value: 'Nairobi, Kenya', color: '#61DAFB' },
+];
 
 const About = () => {
   return (
-    <div className="p-8 bg-gradient-to-r from-gray-900 via-gray-800 to-black min-h-screen text-gray-300">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-extrabold text-luminousGreen mb-6 text-center uppercase tracking-widest animate-pulse">About Me</h2>
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/3">
-            <img
-              src="static/portfolio.jpg" 
-              alt="Prudence Mathu"
-              className="rounded-full shadow-lg mx-auto mb-6 md:mb-0"
-            />
-          </div>
-          <div className="md:w-2/3 md:ml-8">
-            <h3 className="text-3xl font-bold text-luminousGreen mb-4">Prudence Mathu</h3>
-            <p className="text-lg leading-relaxed">
-              I'm Prudence Mathu, a passionate software developer with a strong commitment to delivering high-quality, efficient, and user-friendly applications. My journey in software development is driven by a love for learning and a dedication to mastering the latest technologies.
-            </p>
-            <p className="text-lg leading-relaxed mt-4">
-              My work is grounded in strong moral values, ensuring that I approach every project with integrity and a focus on building trust with my clients. I believe in creating solutions that not only meet the technical requirements but also contribute positively to the world.
-            </p>
-            <p className="text-lg leading-relaxed mt-4">
-              With a diverse skill set that spans various programming languages, frameworks, and tools, I have the expertise and confidence to tackle complex challenges and deliver results that exceed expectations. I am committed to continuous improvement and always looking for opportunities to grow both personally and professionally.
-            </p>
-          </div>
+    <div className="max-w-5xl mx-auto px-6 lg:px-8 py-20">
+      <p className="font-mono text-sm text-amber mb-3">// about</p>
+      <div className="flex flex-col md:flex-row gap-12 items-start">
+        <img
+          src="static/portfolio.jpg"
+          alt="Prudence Mathu"
+          className="w-40 h-40 md:w-48 md:h-48 object-cover rounded border border-line grayscale hover:grayscale-0 hover:-rotate-2 hover:scale-105 transition-all duration-300 shrink-0"
+        />
+        <div className="flex-1 space-y-5 text-muted leading-relaxed">
+          <p>
+            I'm a software developer currently completing a Diploma in Information Technology at
+            KCA University, after finishing a software engineering program at Zindua School in 2024.
+            I like taking a problem — a business that needs an ordering site, a habit that needs
+            tracking — and building the smallest working system that solves it well.
+          </p>
+          <p>
+            Most of my work sits between the front end and the back end: React on the interface,
+            Django or Firebase underneath. I care about code that's easy to read six months later,
+            and I'm just as interested in the database design and the deployment as I am in the UI.
+          </p>
+          <p>
+            I'm looking for an opportunity — an internship, attachment, or junior role — where I can
+            work on real systems alongside people who'll push my standards up.
+          </p>
         </div>
+      </div>
+
+      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {facts.map(({ icon: Icon, label, value, color }) => (
+          <div key={label} className="flex items-start gap-3 p-4 rounded-lg border border-line bg-surface">
+            <div
+              className="w-9 h-9 rounded-md flex items-center justify-center shrink-0"
+              style={{ backgroundColor: `${color}1A` }}
+            >
+              <Icon size={16} color={color} />
+            </div>
+            <div>
+              <p className="font-mono text-xs text-muted">{label}</p>
+              <p className="text-paper text-sm mt-0.5">{value}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

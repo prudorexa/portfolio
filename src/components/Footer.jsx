@@ -1,59 +1,37 @@
 import React from 'react';
-import { FaInstagram, FaLinkedin, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+
+const links = [
+  { href: 'https://github.com/prudorexa', icon: FaGithub, label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/prudence-mathu-97aa73300/', icon: FaLinkedin, label: 'LinkedIn' },
+  { href: 'https://www.instagram.com/prudorexa', icon: FaInstagram, label: 'Instagram' },
+  { href: 'https://wa.me/+254723831464', icon: FaWhatsapp, label: 'WhatsApp' },
+];
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-300 py-6 mt-8">
-      <div className="container mx-auto flex justify-center space-x-6">
-        {/* Instagram */}
-        <a
-          href="https://www.instagram.com/prudorexa"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-luminousGreen hover:text-green-400 transition-colors duration-300"
-          aria-label="Instagram"
-        >
-          <FaInstagram size={24} />
-        </a>
-        
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/prudencemathu"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-luminousGreen hover:text-green-400 transition-colors duration-300"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin size={24} />
-        </a>
-        
-        {/* TikTok */}
-        <a
-          href="https://www.tiktok.com/@prudorexa.24"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-luminousGreen hover:text-green-400 transition-colors duration-300"
-          aria-label="TikTok"
-        >
-          <FaTiktok size={24} />
-        </a>
-        
-        {/* WhatsApp */}
-        <a
-          href="https://wa.me/+254723831464"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-luminousGreen hover:text-green-400 transition-colors duration-300"
-          aria-label="WhatsApp"
-        >
-          <FaWhatsapp size={24} />
-        </a>
-      </div>
-      <div className="text-center mt-4">
-        <p className="text-sm">&copy; {new Date().getFullYear()} Prudence Mathu. All rights reserved.</p>
+    <footer className="border-t border-line">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8 py-10 flex flex-col sm:flex-row justify-between items-center gap-6">
+        <p className="font-mono text-xs text-muted">
+          © {new Date().getFullYear()} Prudence Mathu
+        </p>
+        <div className="flex gap-5">
+          {links.map(({ href, icon: Icon, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-amber transition-colors duration-150"
+              aria-label={label}
+            >
+              <Icon size={18} />
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
